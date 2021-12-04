@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> CAR DETAILS </title>
+    <script type="text/javascript">
+        function validate() {
+
+            var model = document.getElementById("model").value;
+            var km = document.getElementById("km").value;
+            var add = document.getElementById("add").value;
+            var reg = document.getElementById("reg");
+
+            if (model == null || model == " ") {
+                alert("!!model name cant be empty cannot be empty!!");
+                return false;
+            }
+            if (km.length != 2) {
+                alert("!!enter a valid range code!!");
+                return false;
+            }
+            if (reg.length != 16) {
+                alert("!!enter a valid aadhar number!!");
+                return false;
+            }
+            if (/[^a-zA-Z0-9\-\/]/.test(add)) {
+                alert("!!enter a valid address!!");
+                return false;
+            }
+            if (!(document.getElementById("tc").checked)) {
+                alert("!!you must agree to T&C!!");
+                return false;
+            } else {
+                return true;
+            }
+        }
+    </script>
+    <style>
+        body {
+            background:radial-gradient(#ffffff, #ffcc2f);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+        
+        form {
+            width: 500px;
+            margin: auto;
+            padding: 20px;
+            background-color: hsl(0, 0%, 0%);
+            font-size: 19px;
+            font-family: Lucida Sans;
+            color: white;
+            background-size: 100% 100%;
+        }
+        
+        input[type=text] {
+            width: 80%;
+            padding: 5px;
+            font-size: 16px;
+        }
+        
+        input[type=submit] {
+            padding: 5px;
+            font-size: 24px;
+            width: 100px;
+        }
+        
+        select {
+            font-size: 16px;
+            padding: 10px;
+            background: #e0d3e8;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1 style="color:#ff1e00"><u> CAR DETAILS </u></h1>
+    </center> <br>
+    <form name="myform" method="post" action="responce_submitted.html" onsubmit="return validate()">
+        SELECT BRAND: <br>
+        <select name="brand">
+    <option >--Select brand--</option>
+    <option > HYUNDAI</option>
+    <option > TATA</option>
+    <option > AUDI</option>
+    <option > BENZ</option>
+    <option > MARUTHI SUZUKI</option>
+    <option > SCODA</option>
+    <option > TOYOTA</option>
+    <option > WOLKSWAGEN</option>
+    <option > MG HECTOR</option>
+    <option > KIA</option>
+    <option >RENAULT </option>
+    <option > TESLA</option>
+</select> <br><br> CAR MODEL: <br>
+        <input type="text" placeholder="Enter the modal of the car" id="model"> <br><br>
+        <input type="radio" name="r"> HIGH END
+        <input type="radio" name=""> MID END
+        <input type="radio" name=""> LOW END<br><br> Kilo Meters covered by the car: <br>
+
+        <input type="Phone" placeholder="KM" id="km"> <br><br> Registration number: <br>
+        <input type="text" data-type="adhaar-number" maxLength="19" id="reg" placeholder="xxxx-xxx-xxx-xxx"> <br><br> Address: <br>
+        <input type="text" data-type="text" id="add" placeholder="address"><br><br> Upload a picture of your signature: <br>
+        <input type="file" name="uploadBtn"><br><br>
+
+
+
+
+
+
+
+
+        <input type="radio" name="Gender"> I accept all the privacy policies <br><br>
+
+
+
+
+        <tr>
+            <td> <button type="submit">submit</button></td>
+
+        </tr>
+    </form>
+</body>
+
+</html>
